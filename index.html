@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Météo</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Importation des icônes de Google -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  
+  <main class="main-container">
+
+    <header class="input-container">
+      <input class="ville-input" id="cityInput" placeholder="Entrez une ville" type="text"/>
+      <button class="rechercher-btn" onclick="obtenirMeteo()">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </header>
+
+    <section id="weatherInfo" class="info-meteo" style="display: none;">
+      
+      <div class="date-location-container">
+        <div class="localisation">
+          <span class="material-symbols-outlined">
+            location_on 
+          </span> 
+          <h4 class="ville-tsxt">Paris</h4>
+        </div>
+        
+        <h5 class="date-actuelle-txt regular-txt">Mardi 17/09</h5>
+      </div>
+
+      <div class="resume-meteo-container">
+        <img src="assets/weather/clouds.svg" class="resume-meteo-img">
+        
+        <div class="resume-meteo-info">
+          <h1 class="temp-txt">25 °C</h1>
+          <h3 class="condition-txt regular-txt">Nuageux</h3>
+        </div>
+      </div>
+
+      <div class="resume-conditions-container">
+        <div class="condition-item">
+            <span class="material-symbols-outlined">
+            water_drop
+            </span>
+            <div class="condition-info">
+              <h5 class="regular-txt">Humidité</h5>
+              <h5 class="valeur-humidite-txt">20%</h5>
+            </div>
+        </div>
+
+        <div class="condition-item">
+          <span class="material-symbols-outlined">
+            air
+          </span>
+            <div class="condition-info">
+              <h5 class="regular-txt">Vent</h5>
+              <h5 class="valeur-vent-txt">15 km/h</h5>
+            </div>
+          </div>
+        </div>
+      
+        <div class="prevision-items-container">
+          
+          <div class="prevision-item">
+            <h5 class="prevision-item-date">21 Sept</h5>
+            <img src="assets/weather/thunderstorm.svg" class="prevision-item-img">
+            <h5 class="prevision-item-temp">25 °C</h5>
+          </div>
+          
+          <div class="prevision-item">
+            <h5 class="prevision-item-date">22 Sept</h5>
+            <img src="assets/weather/thunderstorm.svg" class="prevision-item-img">
+            <h5 class="prevision-item-temp">20 °C</h5>
+          </div>
+          
+          <div class="prevision-item">
+            <h5 class="prevision-item-date">23 Sept</h5>
+            <img src="assets/weather/clear.svg" class="prevision-item-img">
+            <h5 class="prevision-item-temp">27 °C</h5>
+          </div>
+          
+          <div class="prevision-item">
+            <h5 class="prevision-item-date">24 Sept</h5>
+            <img src="assets/weather/rain.svg" class="prevision-item-img">
+            <h5 class="prevision-item-temp">18 °C</h5>
+          </div>
+
+        </div>
+
+    </section>
+
+    <section class="rechercher-ville section-message">
+      <img src="assets/message/search-city.png">
+      <div>
+        <h1>Recherchez une ville</h1>
+        <h4 class="regular-txt">
+          Découvrez les conditions météorologiques de votre ville
+        </h4>
+      </div>
+    </section>
+
+
+    <section class="non-trouve section-message" style="display: none;">
+      <img src="assets/message/not-found.png">
+      <div>
+        <h1>Ville non trouvée</h1>
+        <h4 class="regular-txt">
+          Nous n'avons pas pu trouver la ville. Essayez avec un autre nom.
+        </h4>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
